@@ -8,15 +8,18 @@
 <body ng-controller="SudokuCtrl">
 
   <h5>{{sung}}</h5>
+  <p>{{difficulty}}</p>
+  <p>Grid: {{grid[5]}}</p>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   -->
   <script src="lib/angular/angular.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/services.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/directives.js"></script>
+  <script src="js/services/solutionGenerator.js"></script>
+  <script src="js/services/sudoCell.js"></script>
+  <script src="js/services/sudokuGame.js"></script>
+  <script src="js/controllers/SudokuCtrl.js"></script>
+  <script src="lib/sudoku/sudoku.js"></script>
 </body>
 </html>

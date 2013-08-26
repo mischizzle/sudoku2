@@ -1,6 +1,6 @@
 'use strict';
 
-describe('SudokuCtrl controller', function() {
+xdescribe('SudokuCtrl controller', function() {
 
 	var ctrl;
   var scope;
