@@ -3,13 +3,20 @@
 <head>
   <meta charset="utf-8">
   <title>My AngularJS App</title>
-  <link rel="stylesheet" href="css/app.css"/>
+
+  <link rel="stylesheet" href="assets/styles/css/app.css"/>
+  <link rel="stylesheet" href="assets/styles/css/bootstrap.min.css"/>
+
 </head>
 <body ng-controller="SudokuCtrl">
 
-  <h5>{{sung}}</h5>
   <p>{{difficulty}}</p>
-  <p>Grid: {{grid[5]}}</p>
+
+  <div id="grid">
+    <div ng-repeat="item in grid" class="grid-box">
+      <span>{{item}}</span>
+    </div>
+  </div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
@@ -17,7 +24,7 @@
   <script src="lib/angular/angular.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services/solutionGenerator.js"></script>
-  <script src="js/services/sudoCell.js"></script>
+  <script src="js/services/sudokuCell.js"></script>
   <script src="js/services/sudokuGame.js"></script>
   <script src="js/controllers/SudokuCtrl.js"></script>
   <script src="lib/sudoku/sudoku.js"></script>

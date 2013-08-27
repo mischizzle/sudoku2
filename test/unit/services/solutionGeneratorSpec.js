@@ -32,7 +32,7 @@ describe('solutionGenerator service', function() {
 	  });
 
 	  describe('rows', function() {
-		  it('should not duplicate values in a given row', function() {
+		  it('should not have duplicate values in a given row', function() {
 
 		  	row1 = solutionGenerator.matrix.slice(0, 9).sort();
 		  	row2 = solutionGenerator.matrix.slice(9, 18).sort();
@@ -53,6 +53,12 @@ describe('solutionGenerator service', function() {
 		  	expect(row7).toEqual(rowSample);
 		  	expect(row8).toEqual(rowSample);
 		  });
+	  });
+
+	  xdescribe('columns', function() {
+	  	it('should not have duplicate values in a given column', function() {
+
+	  	});
 	  });
   });
 });

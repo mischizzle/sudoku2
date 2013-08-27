@@ -1,33 +1,33 @@
 'use strict';
 
-sudokuApp.factory('sudokuGame', function(solutionGenerator) {
-	
+sudokuApp.factory('sudokuGame', function(solutionGenerator, sudokuCell) {
+
 	return {
 		
 		difficulty: 1,
-		game: { grid: [] },
+		solutionArr: [],
+		board: {},
 
-		newGame: function() {
-			var solutionGrid = this.solutionGrid();
-			this.game.grid = solutionGrid;
-		},
+		// newGame: function() {
+		// 	var solutionGrid = this.solutionGrid();
+		// 	this.game.grid = solutionGrid;
+		// },
 
-		setDifficulty: function(newDifficulty) {
-			this.difficulty = newDifficulty;
+		setDifficulty: function(value) {
+			return this.difficulty = value;
 		},		
 
-		solutionGrid: function() {
-			var solution = solutionGenerator.generateMatrix();
-			return solution;
+		setSolution: function() {
+			return this.solutionArr = solutionGenerator.generateMatrix();
 		},
 
-		cell: function(answer, guess, inPlay) {
-			var cellObj = {
-											answer: answer,
-											guess: guess,
-											inPlay: inPlay
-										}
-			return cellObj;
+		setBoard: function() {
+			var cellName;
+
+			for(var i=0; i<this.solutionArr.length; i++) {
+				cellName = "cell" + i;
+				this.board[cellName] = sudokuCell.getInstance(i);
+			}			
 		}
 	}
 });
