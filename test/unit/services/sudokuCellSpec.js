@@ -19,12 +19,12 @@ xdescribe('sudokuCell service', function() {
 			expect(sudokuCell.solution).toBe(5);
 		});
 
-		it('should set playability', function() {
+		xit('should set playability', function() {
 			sudokuCell.setPlayability(true);
 			expect(sudokuCell.isPlayable).toBe(true);
 		});
 
-		it('should set the user value', function() {
+		xit('should set the user value', function() {
 			sudokuCell.setAnswer(4);
 			expect(sudokuCell.answer).toBe(4)
 		})

@@ -12,9 +12,9 @@
 
   <p>{{difficulty}}</p>
 
-  <div id="grid">
-    <div ng-repeat="item in grid" class="grid-box">
-      <span>{{item}}</span>
+  <div id="board">
+    <div ng-repeat="square in board" class="grid-box">
+      <span>{{square.solution}}</span>
     </div>
   </div>
 
@@ -24,8 +24,8 @@
   <script src="lib/angular/angular.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services/solutionGenerator.js"></script>
-  <script src="js/services/sudokuCell.js"></script>
-  <script src="js/services/sudokuGame.js"></script>
+  <script src="js/services/boardSquare.js"></script>
+  <script src="js/services/gameManager.js"></script>
   <script src="js/controllers/SudokuCtrl.js"></script>
   <script src="lib/sudoku/sudoku.js"></script>
 </body>

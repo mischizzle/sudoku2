@@ -1,6 +1,6 @@
 'use strict';
 
-describe('solutionGenerator service', function() {
+xdescribe('solutionGenerator service', function() {
 
 	var solutionGenerator;
 	var matrix;

@@ -1,11 +1,11 @@
 'use strict';
 
-sudokuApp.factory('sudokuCell', function() {
+sudokuApp.factory('boardSquare', function() {
 
 	var solution;
 
-  var Cell = function(solution) {
-  	this.solution = solution;
+  var Cell = function() {
+  	this.solution = 0;
   	this.isPlayable = false;
     this.answer = 0;
     this.hints = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -24,9 +24,8 @@ sudokuApp.factory('sudokuCell', function() {
   } 
 
   return {
-
-    getInstance: function(solution) {
-      return new Cell(solution);
+    newSquare: function() {
+      return new Cell();
     }
   }
 });

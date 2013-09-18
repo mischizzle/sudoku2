@@ -1,13 +1,10 @@
 'use strict';
 
-sudokuApp.controller('SudokuCtrl', function SudokuCtrl($scope, sudokuGame) {
+sudokuApp.controller('SudokuCtrl', function SudokuCtrl($scope, gameManager) {
 
-  	$scope.difficulty = sudokuGame.difficulty;
-  	$scope.grid = sudokuGame.setSolution();
+  	//$scope.difficulty = sudokuGame.difficulty;
+  	//$scope.grid = sudokuGame.setSolution();
 
-  	sudokuGame.setBoard();
-
-  	console.log(sudokuGame.board);
-
+  	$scope.board = gameManager.newBoard();
 
 });
