@@ -4,28 +4,28 @@ sudokuApp.factory('boardSquare', function() {
 
 	var solution;
 
-  var Cell = function() {
+  var Square = function() {
   	this.solution = 0;
   	this.isPlayable = false;
     this.answer = 0;
     this.hints = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   };
 
-  Cell.prototype.setSolution = function(value) {
+  Square.prototype.setSolution = function(value) {
   	this.solution = value;
   }
 
-  Cell.prototype.setPlayability = function(value) {
+  Square.prototype.setPlayability = function(value) {
   	this.isPlayable = value;
   }	
 
-  Cell.prototype.setAnswer = function(value) {
+  Square.prototype.setAnswer = function(value) {
   	this.answer = value;
   } 
 
   return {
     newSquare: function() {
-      return new Cell();
+      return new Square();
     }
   }
 });

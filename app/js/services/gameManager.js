@@ -12,7 +12,7 @@ sudokuApp.factory('gameManager', function(solutionGenerator, boardSquare) {
 
 		newBoard: function() {
 			var newBoard = this.assignSolution(this.createBoard(), solutionGenerator.generateMatrix());
-			//newBoard = 
+			return this.setGameDifficulty(newBoard, 60);
 		},
 
 		createBoard: function() {
@@ -26,7 +26,7 @@ sudokuApp.factory('gameManager', function(solutionGenerator, boardSquare) {
 			return gameBoard;	
 		},
 
-		setSolution: function(gameBoard, solution) {
+		assignSolution: function(gameBoard, solution) {
 			for(var i=0; i<BOARD_SQUARES; i++) {
 				gameBoard[i].solution = solution[i];
 			}
@@ -36,12 +36,19 @@ sudokuApp.factory('gameManager', function(solutionGenerator, boardSquare) {
 		setGameDifficulty: function(gameBoard, difficulty) {
 			var allPossibleSquares = [];
 			var randomSquare;
+			var counter = 0;
 
 			for(var i=0; i<BOARD_SQUARES; i++) {
 				allPossibleSquares[i] = i+1;
 			}
 
-			randomSquare = Math.random(1, allPossibleSquares.length);
+			while(counter < difficulty) {
+				randomSquare = Math.floor(Math.random() * (allPossibleSquares.length-1));
+				gameBoard[ allPossibleSquares[randomSquare] ].isPlayable = true;
+				allPossibleSquares.splice(randomSquare, 1) 
+				counter++;
+			};
+			return gameBoard;
 		}
 	}
 });

@@ -8,14 +8,30 @@
   <link rel="stylesheet" href="assets/styles/css/bootstrap.min.css"/>
 
 </head>
-<body ng-controller="SudokuCtrl">
+<body ng-controller="BoardCtrl">
 
-  <p>{{difficulty}}</p>
+  <h2>Sudoku</h2>
 
   <div id="board">
-    <div ng-repeat="square in board" class="grid-box">
-      <span>{{square.solution}}</span>
+    <div ng-repeat="square in board" ng-click="answer(square)" class="grid-box">
+      <span ng-show="square.isPlayable">{{square.solution}}</span>
     </div>
+  </div>
+
+  <div id="answers" ng-show="answersShown">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+    <span>5</span>
+    <span>6</span>
+    <span>7</span>
+    <span>8</span>
+    <span>9</span>
+  </div>
+
+  <div id="hints">
+    <h3>Hints</h3>
   </div>
 
   <!-- In production use:
@@ -26,7 +42,7 @@
   <script src="js/services/solutionGenerator.js"></script>
   <script src="js/services/boardSquare.js"></script>
   <script src="js/services/gameManager.js"></script>
-  <script src="js/controllers/SudokuCtrl.js"></script>
+  <script src="js/controllers/BoardCtrl.js"></script>
   <script src="lib/sudoku/sudoku.js"></script>
 </body>
 </html>
